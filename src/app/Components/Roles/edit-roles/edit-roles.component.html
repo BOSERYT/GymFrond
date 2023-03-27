@@ -1,0 +1,33 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Edición de Roles</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="editarForm.controls['name_role'].dirty && editarForm.hasError('required', 'name_role')">
+                                    <span class="fa fa-user p-2"></span>
+                                    <input formControlName="name_role" type="text" placeholder="Nombre">
+                                    <input formControlName="id" type="text" placeholder="Id" hidden>
+                                </div>
+                                <small
+                                    *ngIf="editarForm.controls['name_role'].dirty && editarForm.hasError('required', 'name_role')"
+                                    class="text-danger">El nombre es requerido</small>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                <button (click)="preConfirmToDelete()" class="btn btn-primary btn-block mt-4 w-100" type="button">Eliminar</button>
+                              </div>
+    
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

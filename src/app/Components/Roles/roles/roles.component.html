@@ -1,0 +1,25 @@
+<div class="container">
+    <h3>Listado de Roles</h3><br>
+    <button type="button" class="btn btn-secondary" routerLink="/newRole">Agregar un rol</button>
+    <button (click)="logout()" type="button" class="btn btn-danger">Salir</button>
+    
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">NP</th>
+        <th scope="col">Nombre del rol</th>
+        <th scope="col">Estatus</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rol of roles; let indice = index;" (click)="editRole(rol.id)">
+        <th scope="row">{{indice+1}}</th>
+        <td>{{ rol.name_role }}</td>
+        <td>{{ rol.available }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
