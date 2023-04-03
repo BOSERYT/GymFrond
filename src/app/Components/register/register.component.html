@@ -1,7 +1,6 @@
 <form [formGroup] = "registerForm">
   <div class="login-box">
   <h2>Sign Up</h2>
-  <form>
     <div class="user-box" [class.error]="registerForm.controls['name_user'].dirty && registerForm.hasError('required', 'name_user')">
       <input formControlName="name_user" type="text"  required="">
       <label>Nombre</label>
@@ -14,40 +13,63 @@
       <label>Apellido Paterno</label>
       <small
       *ngIf="registerForm.controls['first_last_name'].dirty && registerForm.hasError('required', 'first_last_name')"
-      class="text-danger">El nombre es requerido</small>
+      class="text-danger">El apellido es requerido</small>
     </div>
-    <div class="user-box">
-      <input type="text"  required="">
+    <div class="user-box" [class.error]="registerForm.controls['second_last_name'].dirty && registerForm.hasError('required', 'second_last_name')">
+      <input  formControlName="second_last_name" type="text"  required="">
       <label>Apellido Materno</label>
+      <small
+      *ngIf="registerForm.controls['second_last_name'].dirty && registerForm.hasError('required', 'second_last_name')"
+      class="text-danger">El apellido es requerido</small>
     </div>
-    <div class="user-box">
-      <input type="text"  required="">
+    <div class="user-box" [class.error]="registerForm.controls['age'].dirty && registerForm.hasError('required', 'age')">
+      <input formControlName="age" type="text"  required="">
       <label>Edad</label>
+      <small
+      *ngIf="registerForm.controls['age'].dirty && registerForm.hasError('required', 'age')"
+      class="text-danger">La edad es requerido</small>
     </div>
-    <div class="user-box">
-      <input type="text"  required="">
+    <div class="user-box" [class.error]="registerForm.controls['age'].dirty && registerForm.hasError('required', 'age')">
+      <input formControlName="age" type="text"  required="">
       <label>Estatura</label>
+      <small
+      *ngIf="registerForm.controls['age'].dirty && registerForm.hasError('required', 'age')"
+      class="text-danger">La edad es requerida</small>
     </div>
-    <div class="user-box">
-      <input type="text"  required="">
+    <div class="user-box"  [class.error]="registerForm.controls['height_user'].dirty && registerForm.hasError('required', 'height_user')">
+      <input type="text" formControlName="height_user" required="">
       <label>Peso</label>
+      <small
+      *ngIf="registerForm.controls['height_user'].dirty && registerForm.hasError('required', 'height_user')"
+      class="text-danger">El peso es requerida</small>
     </div>
-    <div class="user-box">
-      <input type="text"  required="">
+    <div class="user-box"  [class.error]="registerForm.controls['gender'].dirty && registerForm.hasError('required', 'gender')">
+      <input type="text" formControlName="gender"  required="">
       <label>Sexo</label>
+      <small
+      *ngIf="registerForm.controls['gender'].dirty && registerForm.hasError('required', 'gender')"
+      class="text-danger">El sexo es requerida</small>
     </div>
-    <div class="user-box">
-      <input type="text"  required="">
+    <div class="user-box" [class.error]="registerForm.controls['imc'].dirty && registerForm.hasError('required', 'imc')">
+      <input type="text" formControlName="imc" required="">
       <label>IMC</label>
+      <small
+      *ngIf="registerForm.controls['imc'].dirty && registerForm.hasError('required', 'imc')"
+      class="text-danger">El IMC es requerida</small>
     </div>
-    <div class="user-box">
-      <input type="text"  required="">
+    <div class="user-box" [class.error]="registerForm.controls['user_name'].dirty && registerForm.hasError('required', 'user_name')">
+      <input type="text" formControlName="user_name"  required="">
       <label>Usuario</label>
+      <small
+      *ngIf="registerForm.controls['user_name'].dirty && registerForm.hasError('required', 'user_name')"
+      class="text-danger">El Usuario es requerida</small>
     </div>
-    <div class="user-box">
-      <input type="password"  required="">
+    <div class="user-box" [class.error]="registerForm.controls['pass'].dirty && registerForm.hasError('required', 'pass')">
+      <input type="password" formControlName="pass" required="">
       <label>Contraseña</label>
-      <!-- <span (click)="ocultarContrasena()" class="fa {{eyeIcon}}"></span> -->
+      <small
+      *ngIf="registerForm.controls['pass'].dirty && registerForm.hasError('required', 'pass')"
+      class="text-danger">La contraseña es requerida</small>
     </div>
     <a type="submit" (click)="onCreateUser()">
       <span></span>
@@ -56,6 +78,5 @@
       <span></span>
       Submit
     </a>
-  </form>
 </div>
 </form>

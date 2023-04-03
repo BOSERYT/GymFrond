@@ -16,6 +16,8 @@ import { AuthGuard } from './auth.guard';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { UsersComponent } from './Components/users/users.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { ExerciseComponent } from './components/exercise/exercise.component';
+import { MedicalComponent } from './components/medical/medical.component';
 
 
 
@@ -30,6 +32,8 @@ import { RegisterComponent } from './Components/register/register.component';
     NotFoundComponent,
     UsersComponent,
     RegisterComponent,
+    ExerciseComponent,
+    MedicalComponent,
   
   ],
   imports: [

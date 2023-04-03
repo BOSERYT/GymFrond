@@ -10,6 +10,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { AuthGuard } from './auth.guard';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { UsersComponent } from './Components/users/users.component';
+// import { ExerciseComponent } from './Components/exercise/exercise.component';
 
 
 
@@ -17,6 +18,7 @@ const ROUTES:Routes =[
   // {path: '', component:HomeComponent},
   {path: '', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
+  // {path: 'exercise', component:ExerciseComponent},
   {path: 'roles', component:RolesComponent},
   {path: 'newRole', component:CreateRolesComponent},
   {path: 'editRole/:id', component:EditRolesComponent},

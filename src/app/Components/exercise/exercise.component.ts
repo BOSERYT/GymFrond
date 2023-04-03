@@ -1,39 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,Validators,FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Usuarios } from 'src/app/Interfaces/Usuarios';
-import { UsuariosService } from 'src/app/Services/usuarios.service';
+import { Exercise } from 'src/app/Interfaces/Exercise';
+import { ExerciseService } from 'src/app/Services/exercise.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-exercise',
+  templateUrl: './exercise.component.html',
+  styleUrls: ['./exercise.component.css']
 })
-export class RegisterComponent {
+export class ExerciseComponent {
 
-  registerForm! : FormGroup;
+  exerciseForm! : FormGroup;
 
-  constructor(private fb: FormBuilder,private api:UsuariosService, private router: Router){}
+  constructor(private fb: FormBuilder,private api:ExerciseService, private router: Router){}
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      name_user: ['', Validators.required ],
-      first_last_name: ['', Validators.required ],
-      second_last_name: ['', Validators.required ],
-      age: ['', Validators.required ],
-      height_user: ['', Validators.required ],
-      gender: ['', Validators.required ],
-      imc: ['', Validators.required ],
-      user_name: ['', Validators.required ],
-      pass: ['', Validators.required ],
+    this.exerciseForm = this.fb.group({
+      name_exercise: ['', Validators.required ],
+      series: ['', Validators.required ],
+      repetions: ['', Validators.required ],
+      pictures: ['', Validators.required ],
+      routine_id: ['', Validators.required ],
+      available: ['', Validators.required ],
     })
   }
 
-  onCreateUser(){
-    if(this.registerForm.valid){
+  onCreateExercise(){
+    if(this.exerciseForm.valid){
       //Enviar a la BD
-      this.api.createUsers(this.registerForm.value)
+      this.api.createExercise(this.exerciseForm.value)
       .subscribe({
         next:(res=>{
           Swal.fire({
@@ -43,7 +40,7 @@ export class RegisterComponent {
             showConfirmButton: false,
             timer: 1500
           })
-          this.registerForm.reset();
+          this.exerciseForm.reset();
           this.router.navigate(['users']);
         }),
         error:(err)=>{
@@ -58,7 +55,7 @@ export class RegisterComponent {
       })
 
     }else{
-      this.validateAll(this.registerForm);
+      this.validateAll(this.exerciseForm);
       console.log("No valido");
     }
   }
@@ -75,20 +72,4 @@ export class RegisterComponent {
 
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-

@@ -29,12 +29,12 @@ export class UsuariosService {
     return this.http.put<Usuarios>(direccion, form);
   }
 
-  deleteRole(form: Usuarios, id:any):Observable<Usuarios>{
+  deleteUser(form: Usuarios, id:any):Observable<Usuarios>{
     let direccion = this.url + "users/" + id
     return this.http.delete<Usuarios>(direccion)
   }
 
-  getSingleRole(id:any):Observable<Usuarios>{
+  getSingleUser(id:any):Observable<Usuarios>{
     let direccion = this.url + "users/" + id;
     return this.http.get<Usuarios>(direccion)
   }

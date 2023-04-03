@@ -1,0 +1,73 @@
+<div class="outer">
+  <div class="container">
+      <div class="row">
+          <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+              <div class="panel border bg-white">
+                  <div class="panel-heading">
+                      <h3 class="pt-3 font-weight-bold">Nuevos Roles</h3>
+                  </div>
+                  <div class="panel-body p-3">
+                      <form [formGroup] = "exerciseForm">
+                          <div class="form-group pt-3">
+                              <div class="input-field" [class.error]="exerciseForm.controls['name_exercise'].dirty && exerciseForm.hasError('required', 'name_exercise')">
+                                  <span class="fa fa-user p-2"></span>
+                                  <input formControlName="name_exercise" type="text" placeholder="Nombre">
+                              </div>
+                              <small
+                                  *ngIf="exerciseForm.controls['name_exercise'].dirty && exerciseForm.hasError('required', 'name_exercise')"
+                                  class="text-danger">El nombre es requerido</small>
+                          </div>
+                          <div class="form-group pt-3">
+                              <div class="input-field" [class.error]="exerciseForm.controls['series'].dirty && exerciseForm.hasError('required', 'series')">
+                                  <span class="fa fa-user p-2"></span>
+                                  <input formControlName="series" type="text" placeholder="Series">
+                              </div>
+                              <small
+                                  *ngIf="exerciseForm.controls['series'].dirty && exerciseForm.hasError('required', 'series')"
+                                  class="text-danger">Las Series son requeridas</small>
+                          </div>
+                          <div class="form-group pt-3">
+                              <div class="input-field" [class.error]="exerciseForm.controls['repetions'].dirty && exerciseForm.hasError('required', 'repetions')">
+                                  <span class="fa fa-user p-2"></span>
+                                  <input formControlName="repetions" type="text" placeholder="Repeticiones">
+                              </div>
+                              <small
+                                  *ngIf="exerciseForm.controls['repetions'].dirty && exerciseForm.hasError('required', 'repetions')"
+                                  class="text-danger">Las Repeticiones son requeridas</small>
+                          </div>
+                          <div class="form-group pt-3">
+                              <div class="input-field" [class.error]="exerciseForm.controls['pictures'].dirty && exerciseForm.hasError('required', 'pictures')">
+                                  <span class="fa fa-user p-2"></span>
+                                  <input formControlName="pictures" type="text" placeholder="Imagen">
+                              </div>
+                              <small
+                                  *ngIf="exerciseForm.controls['pictures'].dirty && exerciseForm.hasError('required', 'pictures')"
+                                  class="text-danger">La imagem es requerido</small>
+                          </div>
+                          <div class="form-group pt-3">
+                              <div class="input-field" [class.error]="exerciseForm.controls['routine_id'].dirty && exerciseForm.hasError('required', 'routine_id')">
+                                  <span class="fa fa-user p-2"></span>
+                                  <input formControlName="routine_id" type="text" placeholder="Id Rutina">
+                              </div>
+                              <small
+                                  *ngIf="exerciseForm.controls['routine_id'].dirty && exerciseForm.hasError('required', 'routine_id')"
+                                  class="text-danger">El Id Rutina es requerido</small>
+                          </div>
+                          <div class="form-group pt-3">
+                              <div class="input-field" [class.error]="exerciseForm.controls['available'].dirty && exerciseForm.hasError('required', 'available')">
+                                  <span class="fa fa-user p-2"></span>
+                                  <input formControlName="available" type="text" placeholder="Disponible">
+                              </div>
+                              <small
+                                  *ngIf="exerciseForm.controls['available'].dirty && exerciseForm.hasError('required', 'available')"
+                                  class="text-danger">El Disponible es requerido</small>
+                          </div>
+                          <button (click)="onCreateExercise()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Registrarme</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
